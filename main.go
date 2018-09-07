@@ -44,7 +44,7 @@ func main() {
 func handleOutline(ctx context.Context, client *github.Client, outline *opml.Outline, parentID int, prefix string) error {
 	body := ""
 	if parentID > 0 {
-		body = fmt.Sprintf("child of #%d", parentID)
+		body = fmt.Sprintf("blocks #%d", parentID)
 	}
 	req := github.IssueRequest{
 		Title: &outline.Text,
